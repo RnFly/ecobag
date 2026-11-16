@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoBag | Jardín</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/juego.css">
+</head>
+<body class="juego">
+
+  <div class="cabecera">
+    <header class="encabezado">
+      <img src="img/logo.png" alt="Logo EcoBag" class="logo">
+    </header>
+
+    <div class="barra-menu barra-juego">
+      <button type="button" class="hamburguesa" id="btn-menu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <button type="button" id="btn-abrir-canje" class="boton-rosa">Canjear Código</button>
+      <span class="espacio"></span>
+      <a href="#" id="btn-como-jugar">Cómo Jugar</a>
+      <button type="button" id="btn-salir" class="enlace-blanco">Cerrar sesión</button>
+    </div>
+
+    <nav class="menu-lateral" id="menu-lateral">
+      <a href="index.html">Inicio</a>
+      <a href="login.html">Iniciar Sesión</a>
+      <a href="producto.html">Nuestro Producto</a>
+      <a href="empresa.html">Nuestra Empresa</a>
+      <a href="servicio.html">Servicio al Cliente</a>
+    </nav>
+  </div>
+
+  <main class="jardin">
+
+    <p class="datos-usuario">
+      <span id="nombre-usuario">...</span> · Nivel <span id="nivel-usuario">1</span>
+    </p>
+
+    <!-- Iconos: mochila, glosario y ajustes -->
+    <div class="iconos">
+      <button type="button" class="icono" id="btn-glosario" title="Glosario">📖</button>
+      <button type="button" class="icono" id="btn-ajustes" title="Ajustes">⚙️</button>
+    </div>
+
+    <p id="mensaje" class="mensaje"></p>
+
+    <!-- Panel: canjear código -->
+    <section id="panel-canje" class="panel-canje oculto">
+      <label for="input-codigo">Escribe el código de tu bolsa:</label>
+      <input type="text" id="input-codigo" placeholder="(=^‥^=)" autocomplete="off">
+      <button type="button" id="btn-canjear" class="boton">Canjear</button>
+    </section>
+
+    <!-- Panel: glosario + "Conoce a tu animalito" -->
+    <section id="panel-glosario" class="panel-canje pantalla oculto">
+      <button type="button" class="cerrar" data-cerrar="panel-glosario" aria-label="Cerrar">✕</button>
+      <h3>Glosario</h3>
+      <div id="grid-glosario" class="grid-glosario"></div>
+      <div id="ficha" class="ficha oculto"></div>
+    </section>
+
+    <!-- Panel: ajustes -->
+    <section id="panel-ajustes" class="panel-canje pantalla oculto">
+      <button type="button" class="cerrar" data-cerrar="panel-ajustes" aria-label="Cerrar">✕</button>
+      <h3>Ajustes</h3>
+      <label for="select-mascota">Mascota en tu jardín:</label>
+      <select id="select-mascota"></select>
+      <label for="input-nombre">Nombre de tu mascota:</label>
+      <input type="text" id="input-nombre" maxlength="20">
+      <button type="button" id="btn-guardar-ajustes" class="boton">Guardar</button>
+      <p id="aviso-ajustes" class="mensaje error"></p>
+    </section>
+
+    <!-- Mascota activa -->
+    <section id="zona-mascota" class="zona-mascota">
+      <p id="sin-mascota">Aún no tienes mascota. ¡Canjea tu primer código!</p>
+      <div id="mascota" class="oculto">
+        <p class="nivel-mascota">Lv.<span id="nivel-mascota">1</span> · ♥ <span id="contador-corazones">0</span></p>
+        <img id="img-mascota" alt="Tu mascota" class="img-mascota">
+        <p id="nombre-mascota" class="nombre-mascota"></p>
+        <p class="pista">Toca a tu mascota para darle cariño</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Cómo jugar -->
+  <div id="ayuda" class="apertura oculto">
+    <div class="tarjeta-ayuda">
+      <h2>¿Cómo se juega? U^ｪ^U </h2>
+      <ol>
+        <li> Compra tu bolsa EcoBag y busca el código en la etiqueta.</li>
+        <li> Toca <strong>Canjear Código</strong> y escríbelo.</li>
+        <li> Toca el empaque para abrirlo y conoce a tu nueva mascota.</li>
+        <li> Tócala para darle cariño y ponle nombre en ⚙️.</li>
+        <li>📖 Conoce a todos los animalitos en el glosario.</li>
+      </ol>
+      <button type="button" id="btn-cerrar-ayuda" class="boton">¡Entendido!</button>
+    </div>
+  </div>
+
+  <!-- Animación al desbloquear: empaque que se abre y sale la mascota -->
+  <div id="apertura" class="apertura oculto">
+    <p id="apertura-texto">¡Toca el empaque para abrirlo!</p>
+    <div id="empaque" class="empaque"></div>
+    <div id="personaje" class="personaje oculto">
+      <img id="img-nueva" alt="Mascota desbloqueada">
+      <p id="nombre-nueva" class="nombre-mascota"></p>
+    </div>
+    <button type="button" id="btn-continuar" class="boton oculto">Continuar</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/juego.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

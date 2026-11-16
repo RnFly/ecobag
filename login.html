@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoBag | Iniciar sesión</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="fondo-login">
+
+  <div class="cabecera">
+    <header class="encabezado">
+      <img src="img/logo.png" alt="Logo EcoBag" class="logo">
+    </header>
+
+    <div class="barra-menu">
+      <button type="button" class="hamburguesa" id="btn-menu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="menu-lateral" id="menu-lateral">
+      <a href="index.html">Inicio</a>
+      <a href="login.html">Iniciar Sesión</a>
+      <a href="producto.html">Nuestro Producto</a>
+      <a href="empresa.html">Nuestra Empresa</a>
+      <a href="servicio.html">Servicio al Cliente</a>
+    </nav>
+  </div>
+
+  <main class="contenedor-form">
+
+    <!-- Pantalla de iniciar sesión -->
+    <section id="caja-login" class="caja">
+      <h2>Iniciar sesión</h2>
+      <form id="form-login">
+        <label for="login-email">Email:</label>
+        <input type="email" id="login-email" required>
+
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" required>
+
+        <button type="submit" class="boton">Entrar</button>
+      </form>
+      <p>¿Primera vez ingresando?
+        <button type="button" id="ir-registro" class="enlace">Registrar</button>
+      </p>
+    </section>
+
+    <!-- Pantalla de registro -->
+    <section id="caja-registro" class="caja oculto">
+      <h2>¡Bienvenido!</h2>
+      <form id="form-registro">
+        <label for="reg-usuario">Nombre de usuario:</label>
+        <input type="text" id="reg-usuario" required>
+
+        <label for="reg-email">Email:</label>
+        <input type="email" id="reg-email" required>
+
+        <label for="reg-password">Password:</label>
+        <input type="password" id="reg-password" minlength="6" required>
+
+        <label for="reg-password2">Verificar password:</label>
+        <input type="password" id="reg-password2" minlength="6" required>
+
+        <button type="submit" class="boton">Registrar</button>
+      </form>
+      <p>¿Ya tienes cuenta?
+        <button type="button" id="ir-login" class="enlace">Iniciar sesión</button>
+      </p>
+    </section>
+
+    <p id="mensaje" class="mensaje"></p>
+
+  </main>
+
+  <!-- El orden importa: primero la librería, luego la conexión, luego esta página -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

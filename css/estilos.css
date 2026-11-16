@@ -1,0 +1,379 @@
+/* ---------- Colores de EcoBag (cámbialos aquí y se actualiza todo) ---------- */
+:root {
+  --crema: #FAF8F1;
+  --verde: #8FB67F;
+  --verde-oscuro: #4A7A4A;
+  --verde-claro: #DDECCB;
+  --rosa: #F7B6C2;
+  --rosa-claro: #FDE7EB;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--crema);
+  color: var(--verde-oscuro);
+}
+
+/* ---------- Encabezado y menú ---------- */
+.encabezado {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 30px;
+}
+
+.logo { height: 70px; }
+
+.menu {
+  display: flex;
+  gap: 25px;
+  padding: 15px 30px;
+  background: var(--verde);
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover { color: var(--rosa-claro); }
+
+/* ---------- Botones (cuadrados) ---------- */
+.boton {
+  width: 100%;
+  padding: 10px;
+  border-radius: 0;
+  border: 2px solid var(--verde-oscuro);
+  background: var(--crema);
+  color: var(--verde-oscuro);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.boton:hover { background: var(--rosa); }
+
+.enlace {
+  background: none;
+  border: none;
+  color: var(--verde-oscuro);
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ---------- Formularios de login y registro ---------- */
+.contenedor-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.caja {
+  width: 100%;
+  max-width: 380px;
+  padding: 25px;
+  background: var(--verde);
+  color: white;
+}
+
+.caja h2 { text-align: center; margin-top: 0; }
+
+.caja label { display: block; margin-top: 12px; }
+
+.caja input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 10px;
+  border: none;
+  border-radius: 0;
+}
+
+.caja .boton { margin-top: 15px; }
+
+.caja p { text-align: center; margin-bottom: 0; }
+
+.caja .enlace { color: var(--verde-oscuro); }
+
+.oculto { display: none; }
+
+.mensaje {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mensaje.error { color: #B03A48; }
+.mensaje.exito { color: var(--verde-oscuro); }
+
+/* =====================================================
+   MENÚ CON HAMBURGUESA (lateral)
+   ===================================================== */
+.cabecera { position: relative; }
+
+.barra-menu {
+  background: var(--verde);
+  padding: 10px 30px;
+}
+
+.hamburguesa {
+  position: relative;
+  z-index: 11;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.hamburguesa span {
+  display: block;
+  width: 34px;
+  height: 3px;
+  margin: 6px 0;
+  background: var(--rosa);
+}
+
+.menu-lateral {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 260px;
+  padding: 10px 15px 30px;
+  background: var(--verde);
+  z-index: 10;
+}
+
+.menu-lateral.abierto { display: block; }
+
+.menu-lateral a {
+  display: block;
+  padding: 18px 10px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+}
+
+.menu-lateral a:hover { background: var(--verde-oscuro); }
+
+/* =====================================================
+   PÁGINAS INFORMATIVAS
+   ===================================================== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 50px 30px;
+  background: linear-gradient(135deg, #1F3D2B, var(--verde-oscuro));
+  color: white;
+}
+
+.hero h1 {
+  grid-column: 1 / -1;
+  margin: 0;
+  text-align: center;
+  color: var(--rosa);
+}
+
+.hero h2 { margin-top: 0; }
+
+.boton-enlace {
+  display: block;
+  margin-bottom: 15px;
+  padding: 14px;
+  background: var(--verde);
+  border: 2px solid var(--verde-oscuro);
+  border-radius: 0;
+  color: var(--verde-oscuro);
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.boton-enlace:hover { background: var(--rosa); }
+
+.foto-paquete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 20px;
+  background: var(--verde);
+  border: 2px dashed white;
+  color: var(--verde-oscuro);
+  font-weight: bold;
+  text-align: center;
+}
+
+.seccion {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 35px 25px;
+}
+
+.seccion h2 {
+  margin-top: 0;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--rosa);
+}
+
+.seccion.alterna {
+  max-width: none;
+  background: var(--verde-claro);
+}
+
+.seccion.alterna > * { max-width: 850px; margin-left: auto; margin-right: auto; }
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.tarjeta {
+  padding: 20px;
+  background: white;
+  border: 2px solid var(--verde);
+}
+
+.tarjeta h3 { margin-top: 0; }
+
+.pasos { counter-reset: paso; list-style: none; padding: 0; }
+
+.pasos li {
+  counter-increment: paso;
+  margin-bottom: 14px;
+  padding: 14px 14px 14px 60px;
+  position: relative;
+  background: white;
+  border: 2px solid var(--verde);
+}
+
+.pasos li::before {
+  content: counter(paso);
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: var(--rosa);
+  font-weight: bold;
+}
+
+.eslogan {
+  padding: 20px;
+  background: var(--rosa-claro);
+  border-left: 6px solid var(--rosa);
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+details {
+  margin-bottom: 10px;
+  background: white;
+  border: 2px solid var(--verde);
+}
+
+summary {
+  padding: 12px 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+details p { margin: 0; padding: 0 15px 15px; }
+
+.pie {
+  padding: 18px;
+  background: var(--verde);
+  color: white;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .hero { grid-template-columns: 1fr; }
+}
+
+/* =====================================================
+   CAMBIOS: fondo de login, carrusel, tabla, misión/visión
+   ===================================================== */
+img { max-width: 100%; }
+
+/* Fondo de login y registro: pon tu imagen en img/fondo-login.jpg */
+body.fondo-login {
+  min-height: 100vh;
+  background: var(--verde-claro) url("../img/fondo-login.jpg") center / cover fixed no-repeat;
+}
+
+/* Imágenes grandes que pondrán ustedes (alt = texto que se ve mientras no estén) */
+.img-grande {
+  display: block;
+  width: 100%;
+  min-height: 260px;
+  object-fit: cover;
+  background: white;
+  border: 2px dashed var(--verde);
+}
+
+/* Carrusel de promociones */
+.carrusel { position: relative; background: white; border: 2px dashed var(--verde); }
+.slide { display: none; }
+.slide.activo { display: block; }
+.slide img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.carrusel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--rosa);
+  border: 2px solid var(--verde-oscuro);
+  border-radius: 0;
+  color: var(--verde-oscuro);
+  font-weight: bold;
+  cursor: pointer;
+}
+#prev { left: 0; }
+#next { right: 0; }
+
+/* Tabla comparativa */
+.tabla-contenedor { overflow-x: auto; }
+.tabla { width: 100%; border-collapse: collapse; background: white; }
+.tabla th, .tabla td { padding: 12px 14px; border: 2px solid var(--verde); text-align: left; vertical-align: top; }
+.tabla th { background: var(--verde); color: white; }
+.tabla tr:nth-child(even) td { background: var(--rosa-claro); }
+.tabla td:first-child { font-weight: bold; }
+
+/* Misión y visión: al pasar el mouse, una crece y la otra se achica */
+.duo { display: flex; gap: 15px; }
+.panel-duo {
+  flex: 1;
+  padding: 25px;
+  background: white;
+  border: 2px solid var(--verde);
+  transition: flex .4s, background .4s;
+}
+.duo:hover .panel-duo { flex: .6; }
+.duo .panel-duo:hover { flex: 1.6; background: var(--rosa-claro); }
+.panel-duo h2 { margin-top: 0; }
+
+@media (max-width: 700px) {
+  .duo { flex-direction: column; }
+  .duo:hover .panel-duo, .duo .panel-duo:hover { flex: 1; }
+}
+
+/* Foto del paquete en Inicio */
+.foto-paquete-img {
+  display: block;
+  width: 100%;
+  min-height: 220px;
+  object-fit: cover;
+  border: 2px dashed white;
+}

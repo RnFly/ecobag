@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoBag | Nuestro Producto</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <div class="cabecera">
+    <header class="encabezado">
+      <img src="img/logo.png" alt="Logo EcoBag" class="logo">
+    </header>
+
+    <div class="barra-menu">
+      <button type="button" class="hamburguesa" id="btn-menu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="menu-lateral" id="menu-lateral">
+      <a href="index.html">Inicio</a>
+      <a href="login.html">Iniciar Sesión</a>
+      <a href="producto.html">Nuestro Producto</a>
+      <a href="empresa.html">Nuestra Empresa</a>
+      <a href="servicio.html">Servicio al Cliente</a>
+    </nav>
+  </div>
+
+  <section class="seccion">
+    <h2>Promociones recientes</h2>
+    <div class="carrusel">
+      <div class="slide"><img src="img/promo1.jpeg" alt="Promoción 1 "></div>
+      <div class="slide"><img src="img/promo2.jpeg" alt="Promoción 2 "></div>
+      <div class="slide"><img src="img/promo3.jpeg" alt="Promoción 3 "></div>
+      <button type="button" id="prev" aria-label="Anterior">&lt;</button>
+      <button type="button" id="next" aria-label="Siguiente">&gt;</button>
+    </div>
+  </section>
+
+  <section class="seccion alterna">
+    <h2>Preguntas frecuentes</h2>
+    <details>
+      <summary>¿De qué está hecha la bolsa?</summary>
+      <p>De fécula de maíz, glicerina y vinagre.</p>
+    </details>
+    <details>
+      <summary>¿Cómo canjeo mi código?</summary>
+      <p>Inicia sesión en la página, entra a tu jardín, da clic en "Canjear Código" y escribe el código que viene en la etiqueta o caja de tu bolsa.</p>
+    </details>
+    <details>
+      <summary>Mi código no funciona, ¿qué hago?</summary>
+      <p>Escríbenos con tu código y una foto de la etiqueta, y lo revisamos.</p>
+    </details>
+    <details>
+      <summary>¿Cómo pido bolsas por volumen?</summary>
+      <p>Contáctanos desde Servicio al Cliente y acordamos tu pedido directamente con el equipo.</p>
+    </details>
+    <details>
+      <summary>¿Dónde puedo comprar?</summary>
+      <p>Vendemos en nuestro punto de venta en Celaya, Guanajuato, y en bazares y ferias locales.</p>
+    </details>
+  </section>
+
+  <section class="seccion">
+    <h2>Calidad y presentación</h2>
+    <p>En EcoBag nos esforzamos por mantener la calidad y la presentación de nuestro producto. Cada lote se elabora con un proceso definido y se revisa antes de llegar a tus manos, para que tu bolsa luzca bien y cumpla su función.</p>
+  </section>
+
+  <section class="seccion alterna">
+    <h2>Cómo funciona y por qué es mejor</h2>
+    <div class="tabla-contenedor">
+      <table class="tabla">
+        <tr><th>Característica</th><th>EcoBag</th><th>Bolsa de plástico convencional</th></tr>
+        <tr><td>Material</td><td>Fécula de maíz, glicerina y vinagre</td><td>Plástico derivado del petróleo</td></tr>
+        <tr><td>Origen</td><td>Materia prima vegetal y renovable</td><td>Recurso fósil no renovable</td></tr>
+        <tr><td>Degradación</td><td>Estudios sobre bioplásticos de almidón reportan hasta 48.7% en 15 días</td><td>Puede tardar cientos de años en degradarse</td></tr>
+        <tr><td>Uso</td><td>Bolsa para cargas ligeras del día a día</td><td>Bolsa de uso común</td></tr>
+        <tr><td>Empaque</td><td>Biodegradable</td><td>Normalmente de plástico</td></tr>
+        <tr><td>Valor agregado</td><td>Código para desbloquear mascotas virtuales</td><td>Ninguno</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <h2>Instrucciones de uso</h2>
+    <p>Úsala fácilmente como una bolsa normal en tu día a día.</p>
+    <ol class="pasos">
+      <li>Compra tu bolsa EcoBag.</li>
+      <li>Úsala para cargas ligeras, como lo harías con cualquier bolsa.</li>
+      <li>Encuentra tu código en la etiqueta o caja y canjéalo en nuestra página.</li>
+    </ol>
+    <!-- Pongan su imagen en img/uso.png -->
+    <img src="img/uso.jpeg" alt="Imagen de uso (pon aquí img/uso.png)" class="img-grande">
+  </section>
+
+  <script src="js/carrusel.js"></script>
+
+  <footer class="pie">
+    <p>© 2026 EcoBag · Lleva ternura, siembra vida.</p>
+  </footer>
+
+  <script src="js/menu.js"></script>
+</body>
+</html>
